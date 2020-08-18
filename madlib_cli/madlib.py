@@ -5,26 +5,52 @@ def fin(x):
     arrayForInput.append(a)
     
     return arrayForInput[x] 
-
+a=6
 with open('assets/text.txt') as f:
     content=f.read()
-
+content
 x=re.sub("{\w*}","%s",content)
 words=re.findall("{\w*}",content)
-print(x,words)
+# print(x,words)
+
+
+
+
+def parse(txt):
+    words=re.findall("{\w*}",txt)
+    str1 = ''.join(words)
+    return str1,words
+
+# print(parse(content))
 
 def  read_template(txt):
-    return txt.strip(txt)
+    return txt.read().strip()
+
+
 emp_arr=[]   
-for i in words:
-    remove_char=re.sub("{|}",'',i)
-    
-    emp_arr.append(input("\n\nPlease Enter a/an %s  : "%(remove_char)))
-print(tuple(emp_arr))
-print(x % tuple(emp_arr))
 
-text=read_template(x)
 
+
+
+def fun_input(statement):
+
+    for i in words:
+        remove_char=re.sub("{|}",'',i)
+        
+        emp_arr.append(input("\n\nPlease Enter a/an %s  : "%(remove_char)))
+    return (x % tuple(emp_arr))
+
+# print(fun_input(words))
+
+def fun_input_test(statement,entries):
+    # input_arr=["mohammed","study","alone","computer","home","sleepy","table","mouse","laptop"]
+    # test_word=re.findall("{\w*}",statement)
+    x=re.sub("{\w*}","%s",statement)
+    # print(x)
+    return (x % entries)
+
+
+# print(fun_input_test(open('assets/text.txt').read(),aaaa))
 
 
 
@@ -86,8 +112,8 @@ This is madlib game, You need to enter different kinds of words such as nouns ve
 lword case is not sensitve
 """
 
-if __name__=='__main__':
-    print(welcome)    
+# if __name__=='__main__':
+#     print(welcome)    
 
 
 
