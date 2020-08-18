@@ -69,7 +69,7 @@ def fun_input_test(statement,entries):
 
 
 
-# print(fun_input_test(open('assets/text.txt').read(),aaaa))
+
 
 
 
