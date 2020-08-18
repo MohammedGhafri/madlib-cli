@@ -11,7 +11,7 @@ def fin(x):
 
 
 
-a=6
+
 # tp open the text.txt file
 with open('assets/text.txt') as f:
     content=f.read()
